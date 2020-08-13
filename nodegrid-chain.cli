@@ -1,3 +1,5 @@
+delete /settings/ipv4_firewall/chains/NODEGRID
+commit
 add /settings/ipv4_firewall/chains/
 set chain=NODEGRID
 commit
