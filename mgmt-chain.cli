@@ -77,3 +77,6 @@ set target=ACCEPT
 set protocol=tcp
 set destination_port=1812
 commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=RETURN
+commit
