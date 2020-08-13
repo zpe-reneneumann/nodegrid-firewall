@@ -1,0 +1,79 @@
+delete /settings/ipv4_firewall/chains/MGMT
+commit
+add /settings/ipv4_firewall/chains/
+set chain=MGMT
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=53
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=53
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=123
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=443
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=icmp
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=162
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=161
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=514
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=22
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=67
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=68
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=389
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=636
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=49
+commit
+add /settings/ipv4_firewall/chains/MGMT
+set target=ACCEPT
+set protocol=tcp
+set destination_port=1812
+commit
