@@ -1,3 +1,5 @@
+delete /settings/ipv4_firewall/chains/ WAN
+commit
 add /settings/ipv4_firewall/chains/
 set chain=WAN
 commit
@@ -24,4 +26,7 @@ commit
 add /settings/ipv4_firewall/chains/WAN
 set target=ACCEPT
 set protocol=icmp
+commit
+add /settings/ipv4_firewall/chains/WAN
+set target=RETURN
 commit
