@@ -1,4 +1,4 @@
-delete /settings/ipv4_firewall/chains/MGMT-EXTRA
+delete /settings/ipv4_firewall/chains/ MGMT-EXTRA
 commit
 add /settings/ipv4_firewall/chains/
 set chain=MGMT-EXTRA
