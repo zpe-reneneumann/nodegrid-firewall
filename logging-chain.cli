@@ -1,0 +1,16 @@
+delete /settings/ipv4_firewall/chains/ LOGGING
+commit
+add /settings/ipv4_firewall/chains/
+set chain=LOGGING
+commit
+add /settings/ipv4_firewall/chains/LOGGING
+set target=LOG
+set log_level=warning
+set log_prefix=DROPPED
+set log_tcp_sequence_numbers=yes
+set log_options_from_the_tcp_packet_header=yes
+set log_options_from_the_ip_packet_header=yes
+commit
+add /settings/ipv4_firewall/chains/LOGGING
+set target=RETURN
+commit
