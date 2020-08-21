@@ -1,0 +1,18 @@
+delete /settings/ipv4_firewall/chains/ SSL-VPN
+commit
+add /settings/ipv4_firewall/chains/
+set chain=SSL-VPN
+commit
+add /settings/ipv4_firewall/chains/SSL-VPN
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=1194
+commit
+add /settings/ipv4_firewall/chains/SSL-VPN
+set target=ACCEPT
+set protocol=tcp
+set destination_port=1194
+commit
+add /settings/ipv4_firewall/chains/SSL-VPN
+set target=RETURN
+commit

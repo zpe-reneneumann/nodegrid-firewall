@@ -1,0 +1,58 @@
+delete /settings/ipv4_firewall/chains/ MGMT-EXTRA
+commit
+add /settings/ipv4_firewall/chains/
+set chain=MGMT-EXTRA
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=25
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=587
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=465
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=2049
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=2049
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=20
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=69
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=80
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=4011
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=ACCEPT
+set protocol=tcp
+set destination_port=88
+commit
+add /settings/ipv4_firewall/chains/MGMT-EXTRA
+set target=RETURN
+commit

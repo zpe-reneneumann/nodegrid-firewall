@@ -1,0 +1,133 @@
+delete /settings/ipv4_firewall/chains/ TARGET-DEVICES
+commit
+add /settings/ipv4_firewall/chains/
+set chain=TARGET-DEVICES
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=80
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=443
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=22
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=162
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=2068
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=8192
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=17990
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=17988
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=623
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5900
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5120
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5121
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5122
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5123
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5555
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5556
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=7578
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=7579
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=901
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=902
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=903
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5900
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5901
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5902
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=ACCEPT
+set protocol=tcp
+set destination_port=5903
+commit
+add /settings/ipv4_firewall/chains/TARGET-DEVICES
+set target=RETURN
+commit
