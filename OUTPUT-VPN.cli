@@ -1,0 +1,47 @@
+delete /settings/ipv4_firewall/chains/ OUTPUT-VPN
+commit
+add /settings/ipv4_firewall/chains/
+set chain=OUTPUT-VPN
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set enable_state_match=yes
+set new=yes
+set established=no
+set related=no
+set invalid=yes
+set reverse_state_match=yes
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=500
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=4500
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=numeric
+set protocol_number=50
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=numeric
+set protocol_number=51
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=1194
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=ACCEPT
+set protocol=tcp
+set destination_port=1194
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-VPN
+set target=RETURN
+commit
