@@ -1,0 +1,76 @@
+delete /settings/ipv4_firewall/chains/ INPUT-TRUSTED
+commit
+add /settings/ipv4_firewall/chains/
+set chain=INPUT-TRUSTED
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set enable_state_match=yes
+set new=yes
+set established=no
+set related=no
+set invalid=yes
+set reverse_state_match=yes
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=443
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=22
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=9966
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=9300
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=67
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=68
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=123
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=25
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=465
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=587
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=179
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=ACCEPT
+set protocol=icmp
+commit
+add /settings/ipv4_firewall/chains/INPUT-TRUSTED
+set target=RETURN
+commit

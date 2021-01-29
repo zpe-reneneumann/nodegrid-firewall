@@ -1,0 +1,40 @@
+delete /settings/ipv4_firewall/chains/ OUTPUT-UNTRUSTED
+commit
+add /settings/ipv4_firewall/chains/
+set chain=OUTPUT-UNTRUSTED
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=53
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=53
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=123
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=ACCEPT
+set protocol=tcp
+set destination_port=443
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=ACCEPT
+set protocol=icmp
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=LOG
+set log_level=warning
+set log_prefix=IPTABLES-OUT-
+set log_tcp_sequence_numbers=yes
+set log_options_from_the_tcp_packet_header=yes
+set log_options_from_the_ip_packet_header=yes
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-UNTRUSTED
+set target=RETURN
+commit
