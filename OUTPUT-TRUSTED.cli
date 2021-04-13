@@ -92,8 +92,23 @@ set destination_port=49
 commit
 add /settings/ipv4_firewall/chains/OUTPUT-TRUSTED
 set target=ACCEPT
-set protocol=tcp
-set destination_port=1812
+set protocol=udp
+set destination_udp_port=1812
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=1813
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=1645
+commit
+add /settings/ipv4_firewall/chains/OUTPUT-TRUSTED
+set target=ACCEPT
+set protocol=udp
+set destination_udp_port=1646
 commit
 add /settings/ipv4_firewall/chains/OUTPUT-TRUSTED
 set target=ACCEPT
