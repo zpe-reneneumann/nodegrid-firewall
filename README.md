@@ -29,6 +29,71 @@ sudo iptables-dropped-logrotate.sh
 sudo iptables-dropped-syslog.sh
 ```
 
+#### Configuration of Firewall
+The newly imported firewall chains will be displayed in the the UO and CLI and can now be used to create appropriate firewall rules.
+The following steps need to be performed:
+- Identify "Trusted" networks, either by IP Address range or by interface
+- Identify "Untrusted" networks, this should be in general everything which is not trusted
+- Identify network traffic which is allowed to route traffic through the Nodegrid.
+- create INPUT rules for "Trusted" Networks
+- create INPUT rules for "Untrusted" Networks
+- create OUTPUT rules for "Trusted" Networks
+- create OUTPUT rules for "Untrusted" Networks
+- create FORWARDING rules for "Untrusted" Networks
+- change the default Policies to DROP all traffic which was not specifically allowed
+
+For the following example, are we using a Nodegrid Bold SR, which uses ETH0 as a management interface and is using a LTE interface as a backup connection.
+Additionally will the traffic from any interface accepted if the source IP is from the trausted network 10.10.0.0/0 which will be in this case on BACKPLANE0
+
+![Firewall Rules](firewall_rules.png)
+
+Defining INPUT rules
+```
+add /settings/ipv4_firewall/chains/INPUT
+set target=INPUT-TRUSTED
+set input_interface=eth0
+commit
+add /settings/ipv4_firewall/chains/INPUT
+set target=INPUT-TRUSTED
+set source_net4=10.10.0.0/16
+commit
+add /settings/ipv4_firewall/chains/INPUT
+set target=INPUT-UNTRUSTED
+set input_interface=LTE
+commit
+```
+
+Defining OUTPUT rules
+```
+add /settings/ipv4_firewall/chains/OUTPUT
+set target=OUTPUT-TRUSTED
+set output_interface=backplane0
+commit
+add /settings/ipv4_firewall/chains/OUTPUT
+set target=OUTPUT-TRUSTED
+set destination_net4=10.10.0.0/16
+commit
+add /settings/ipv4_firewall/chains/OUTPUT
+set target=INPUT-UNTRUSTED
+set output_interface=LTE
+commit
+```
+
+Changing the default policies
+```
+cd /settings/ipv4_firewall/policy/
+set INPUT=DROP
+set OUTPUT=ACCEPT
+set FORWARD=DROP
+commit
+cd /settings/ipv6_firewall/policy/
+set INPUT=DROP
+set OUTPUT=ACCEPT
+set FORWARD=DROP
+commit
+```
+
+
 ## Chains
 
 ### INPUT-TRUSTED
