@@ -30,7 +30,7 @@ sudo iptables-dropped-syslog.sh
 ```
 
 #### Configuration of Firewall
-The newly imported firewall chains will be displayed in the the UO and CLI and can now be used to create appropriate firewall rules.
+The newly imported firewall chains will be displayed in the the UI and CLI and can now be used to create appropriate firewall rules.
 The following steps need to be performed:
 - Identify "Trusted" networks, either by IP Address range or by interface
 - Identify "Untrusted" networks, this should be in general everything which is not trusted
@@ -43,7 +43,7 @@ The following steps need to be performed:
 - change the default Policies to DROP all traffic which was not specifically allowed
 
 For the following example, are we using a Nodegrid Bold SR, which uses ETH0 as a management interface and is using a LTE interface as a backup connection.
-Additionally will the traffic from any interface accepted if the source IP is from the trausted network 10.10.0.0/0 which will be in this case on BACKPLANE0
+Additionally the traffic from any interface is accepted if the source IP is from the trusted network 10.10.0.0/0 which will be in this case on BACKPLANE0
 
 ![Firewall Rules](firewall_rules.png)
 
@@ -151,6 +151,7 @@ Chain is designed to be assigned to OUTBOUND traffic going to trusted networks
 - PXE
 - KERBEROS
 - ICMP
+- RADIUS
 
 ### OUTPUT-UNTRUSTED
 Chain is designed to be assigned to OUTBOUND traffic going to not trusted networks, like WAN interfaces
